@@ -13,6 +13,7 @@ struct FBullCowCount
 
 enum class EGuessStatus
 {
+	Invalid_Status,
 	OK,
 	Not_Isogram,
 	Wrong_Length,
@@ -31,7 +32,7 @@ public:
 	EGuessStatus CheckGuessValidity(FString) const;	// TODO make a more rich return value
 
 	void Reset();	// TODO make a more rich return value
-	FBullCowCount SubmitGuess(FString);
+	FBullCowCount SubmitValidGuess(FString);
 
 	// please try and ignore this and focus on the interface above
 private:
