@@ -4,12 +4,14 @@
 using FString = std::string;
 using int32 = int;
 
+
 // all values initialised to zero 
 struct FBullCowCount
 {
 	int32 Bulls = 0;
 	int32 Cows = 0;
 };
+
 
 enum class EGuessStatus
 {
@@ -20,6 +22,7 @@ enum class EGuessStatus
 	Not_Lowercase
 };
 
+
 class FBullCowGame 
 {
 public:
@@ -29,9 +32,9 @@ public:
 	int32 GetCurrentTry() const;
 	int32 GetHiddenWordLength() const;
 	bool IsGameWon() const;
-	EGuessStatus CheckGuessValidity(FString) const;	// TODO make a more rich return value
+	EGuessStatus CheckGuessValidity(FString) const;	
 
-	void Reset();	// TODO make a more rich return value
+	void Reset();	
 	FBullCowCount SubmitValidGuess(FString);
 
 	// please try and ignore this and focus on the interface above
