@@ -96,6 +96,9 @@ FText GetValidGuess()
 			// assume the guess is valid
 			break;
 		}
+		if (std::cin.eof())
+			std::cin.clear();
+
 		std::cout << std::endl;
 	} while (Status != EGuessStatus::OK);	// keep looping until we get no errors
 
