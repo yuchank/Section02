@@ -1,7 +1,10 @@
+#pragma once
+
 #include "FBullCowGame.h"
 #include <map>
-#define TMap std::map
 
+// to make syntax Unreal friendly
+#define TMap std::map	
 
 FBullCowGame::FBullCowGame() { Reset(); }		// default constructor
 
@@ -19,7 +22,7 @@ int32 FBullCowGame::GetMaxTries() const
 void FBullCowGame::Reset()
 {
 	// constexpr int32 MAX_TRIES = 8;
-	const FString HIDDEN_WORD = "planet";
+	const FString HIDDEN_WORD = "planet";		// this MUST be an isogram
 
 	// MyMaxTries = MAX_TRIES;
 	MyHiddenWord = HIDDEN_WORD;
@@ -34,12 +37,10 @@ EGuessStatus FBullCowGame::CheckGuessValidity(FString Guess) const
 {
 	if (!IsIsoGram(Guess)) // if the guess isn't a isogram
 	{
-		// TODO write function
 		return EGuessStatus::Not_Isogram;
 	}
 	else if (!IsLowercase(Guess))	// if the guess isn't all lowercase	
 	{
-		// TODO write function
 		return EGuessStatus::Not_Lowercase;
 	}
 	else if (GetHiddenWordLength() != Guess.length()) // if the guess length is wrong
